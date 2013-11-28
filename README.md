@@ -1,0 +1,2 @@
+Chrome packaged application utilities [![Build Status](https://secure.travis-ci.org/cleggatt/angular-chromeapp-util.png)](http://travis-ci.org/cleggatt/angular-chromeapp-util) [![Coverage Status](https://coveralls.io/repos/cleggatt/angular-chromeapp-util/badge.png?branch=master)](https://coveralls.io/r/cleggatt/angular-chromeapp-util?branch=master)
+=====================================

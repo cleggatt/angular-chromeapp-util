@@ -1,0 +1,8 @@
+#!/bin/bash
+npm install
+if [ ./node_modules/grunt-cli/bin/grunt ];
+then
+    ./node_modules/grunt-cli/bin/grunt "$@"
+else
+   grunt "$@"
+fi
