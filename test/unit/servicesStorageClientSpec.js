@@ -1,10 +1,9 @@
 'use strict';
 
-beforeEach(module('cleggatt.chromeapputil.storageClient'));
-
 describe('a local storage client', function() {
 
     beforeEach(function () {
+        module('cleggatt.chromeapputil.storageClient');
         module(function($provide) {
 
             var mockWindow = {};
@@ -51,6 +50,7 @@ describe('a local storage client', function() {
 
 describe('obtaining a local storage client in Chrome application', function() {
     beforeEach(function () {
+        module('cleggatt.chromeapputil.storageClient');
         module(function($provide) {
             $provide.value('clcIsChromeApp', true);
         });
@@ -64,6 +64,7 @@ describe('obtaining a local storage client in Chrome application', function() {
 describe('a Chrome application storage client', function() {
 
     beforeEach(function () {
+        module('cleggatt.chromeapputil.storageClient');
         module(function($provide) {
             $provide.value('clcIsChromeApp', true);
         });
@@ -215,6 +216,7 @@ describe('a Chrome application storage client', function() {
 
 describe('obtaining a Chrome application storage client in non-Chrome application', function() {
     beforeEach(function () {
+        module('cleggatt.chromeapputil.storageClient');
         module(function($provide) {
             $provide.value('clcIsChromeApp', false);
         });
@@ -232,6 +234,7 @@ describe('a storage service', function() {
         var mockLocalStorageClient = jasmine.createSpy('local storage client');
 
         beforeEach(function () {
+            module('cleggatt.chromeapputil.storageClient');
             module(function($provide) {
                 $provide.value('clcIsChromeApp', false);
                 $provide.value('clcLocalStorageClient', mockLocalStorageClient);
@@ -255,6 +258,7 @@ describe('a storage service', function() {
         var mockChromeStorageClient = jasmine.createSpy('Chrome storage client');
 
         beforeEach(function () {
+            module('cleggatt.chromeapputil.storageClient');
             module(function($provide) {
                 $provide.value('clcIsChromeApp', true);
                 $provide.value('clcChromeStorageClient', mockChromeStorageClient);

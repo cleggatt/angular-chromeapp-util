@@ -35,8 +35,8 @@ factory('clcChromeStorageServer', ['$injector', '$log', '$window', 'clcIsChromeA
                     $log.log('Sending...');
                     $log.log(message);
                     try {
-                        // It appears that the origin will always be null, but we'll use it if does turn up
-                        event.source.postMessage(message, event.origin ?  event.origin :'*');
+                        // It appears that the origin will always be 'null', but we'll use it if does turn up
+                        event.source.postMessage(message, (event.origin !== 'null') ?  event.origin :'*');
                     } catch(err) {
                         $log.error('cleggatt.chromeapputil.storageServer: Unable to send "got" message...');
                         $log.error(message);

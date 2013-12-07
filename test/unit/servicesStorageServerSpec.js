@@ -1,12 +1,11 @@
 'use strict';
 
-beforeEach(module('cleggatt.chromeapputil.storageServer'));
-
 describe('an un-initialised a Chrome application storage server', function() {
 
     var mockStorage;
 
     beforeEach(function () {
+        module('cleggatt.chromeapputil.storageServer');
         module(function($provide) {
             mockStorage = jasmine.createSpyObj('$chromeStorageLocal', ['set', 'get', 'remove']);
 
@@ -33,6 +32,7 @@ describe("a Chrome application storage server", function() {
     var mockStorage;
 
     beforeEach(function () {
+        module('cleggatt.chromeapputil.storageServer');
         module(function($provide) {
             mockStorage = jasmine.createSpyObj('$chromeStorageLocal', ['set', 'get', 'remove']);
 
@@ -150,6 +150,7 @@ describe("a Chrome application storage server message error scenarios", function
     var mockLog;
 
     beforeEach(function () {
+        module('cleggatt.chromeapputil.storageServer');
         module(function($provide) {
             mockWindow = jasmine.createSpyObj('$window', ['addEventListener', 'removeEventListener']);
             mockStorage = jasmine.createSpyObj('$chromeStorageLocal', ['set', 'get', 'remove']);
@@ -197,7 +198,7 @@ describe("a Chrome application storage server message error scenarios", function
                 key : "the_key"
             },
             source : mockEventSource,
-            origin : null
+            origin : 'null'
         };
         $window.addEventListener.mostRecentCall.args[1](event);
         // Exercise
@@ -230,6 +231,7 @@ describe("a Chrome application storage server message error scenarios", function
 
 describe('obtaining a Chrome application storage server in non-Chrome application', function() {
     beforeEach(function () {
+        module('cleggatt.chromeapputil.storageServer');
         module(function($provide) {
             $provide.value('clcIsChromeApp', false);
         });
